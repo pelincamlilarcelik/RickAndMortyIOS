@@ -25,7 +25,7 @@ class RMLocationView: UIView {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.alpha = 0
         table.isHidden = true
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(RMLocationTableViewCell.self, forCellReuseIdentifier: RMLocationTableViewCell.cellIdentifier)
         return table
     }()
     private let spinner: UIActivityIndicatorView = {
@@ -42,9 +42,14 @@ class RMLocationView: UIView {
         backgroundColor = .systemBackground
         spinner.startAnimating()
         addConstraints()
+        configureTable()
     }
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    private func  configureTable(){
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     private func addConstraints(){
         NSLayoutConstraint.activate([
@@ -64,5 +69,24 @@ class RMLocationView: UIView {
     }
     public func configure(with viewModel: RMLocationViewModel){
         self.viewModel = viewModel
+    }
+}
+extension RMLocationView: UITableViewDelegate,UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.cellViewModels.count ?? 0
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RMLocationTableViewCell.cellIdentifier, for: indexPath) as? RMLocationTableViewCell else {
+            fatalError()
+        }
+        guard let viewModel = viewModel else {fatalError()}
+        let cellViewModel = viewModel.cellViewModels[indexPath.row]
+        cell.textLabel?.text = cellViewModel.name
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        //notify controller of selection
     }
 }
