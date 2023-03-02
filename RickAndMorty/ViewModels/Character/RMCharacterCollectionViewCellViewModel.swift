@@ -16,17 +16,18 @@ final class RMCharacterCollectionViewCellViewModel: Hashable,Equatable{
      let characterName: String
      let characterStatus: RMCharacterStatus
      let characterImageUrl: URL?
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(characterName)
-        hasher.combine(characterStatus)
-        hasher.combine(characterImageUrl)
-    }
+    
     
     // MARK: Init
     init(characterName: String, characterStatus: RMCharacterStatus, characterImageUrl: URL?) {
         self.characterName = characterName
         self.characterStatus = characterStatus
         self.characterImageUrl = characterImageUrl
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(characterName)
+        hasher.combine(characterStatus)
+        hasher.combine(characterImageUrl)
     }
     
     public var characterStatusText: String{
