@@ -17,7 +17,7 @@ struct  RMLocationTableViewCellViewModel:Equatable,Hashable{
         hasher.combine(location.id)
     }
     
-    let location: RMLocation
+    private let location: RMLocation
     init(location: RMLocation) {
         self.location = location
     }
