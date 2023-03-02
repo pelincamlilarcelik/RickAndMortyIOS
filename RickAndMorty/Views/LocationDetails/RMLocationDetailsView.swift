@@ -130,10 +130,10 @@ extension RMLocationDetailView: UICollectionViewDelegate,UICollectionViewDataSou
         case .information:
             break
         case .characters:
-            guard let location = viewModel.character(at:indexPath.row) else{
+            guard let character = viewModel.character(at:indexPath.row) else{
                 return
             }
-            delegate?.rmLocationDetailView(self, didSelect: location)
+            delegate?.rmLocationDetailView(self, didSelect: character)
             
         }
         
