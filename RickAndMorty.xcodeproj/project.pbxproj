@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7717392929B5150E00A788F4 /* RMSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717392829B5150E00A788F4 /* RMSearchResultView.swift */; };
 		771BEDFE29B215FB0017B3DD /* RMSearchOptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BEDFD29B215FB0017B3DD /* RMSearchOptionPickerViewController.swift */; };
 		771BEE0029B24BC40017B3DD /* RMSearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BEDFF29B24BC40017B3DD /* RMSearchResultViewModel.swift */; };
 		775CE47E29B0941E0052C688 /* RMLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CE47D29B0941E0052C688 /* RMLocationView.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7717392829B5150E00A788F4 /* RMSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultView.swift; sourceTree = "<group>"; };
 		771BEDFD29B215FB0017B3DD /* RMSearchOptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchOptionPickerViewController.swift; sourceTree = "<group>"; };
 		771BEDFF29B24BC40017B3DD /* RMSearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultViewModel.swift; sourceTree = "<group>"; };
 		775CE47D29B0941E0052C688 /* RMLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLocationView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				775CE49029B0E7A80052C688 /* RMSearchView.swift */,
 				775CE49529B0EAA60052C688 /* RMNoSearchResultsView.swift */,
 				775CE49929B0EB370052C688 /* RMSearchInputView.swift */,
+				7717392829B5150E00A788F4 /* RMSearchResultView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				7760CFEF29A7AB500015FB6E /* RMSingleLocation.swift in Sources */,
 				7796570B29ACF46000C9D620 /* RMSearchViewController.swift in Sources */,
 				775CE49429B0E8440052C688 /* RMSearchViewViewModel.swift in Sources */,
+				7717392929B5150E00A788F4 /* RMSearchResultView.swift in Sources */,
 				77BCC54B29A8A8F100672B14 /* RMCharacterListView.swift in Sources */,
 				775CE49829B0EAE00052C688 /* RMNoSearchResultsViewViewModel.swift in Sources */,
 				77BCC54729A8A45100672B14 /* RMGetAllCharactersResponse.swift in Sources */,
