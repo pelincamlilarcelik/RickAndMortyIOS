@@ -8,6 +8,8 @@
 import UIKit
 protocol RMSearchViewDelegate: AnyObject{
     func rmSearchView(_ searchView: RMSearchView,didSelectOption option: RMSearchInputViewViewModel.DynamicType)
+    
+    func rmSearchView(_ searchView: RMSearchView,didSelectLocation location: RMLocation)
 }
 
 final class RMSearchView: UIView {
@@ -29,6 +31,7 @@ final class RMSearchView: UIView {
          addConstraints()
          searchInputView.configure(with: RMSearchInputViewViewModel(type: viewModel.config.type))
          searchInputView.delegate = self
+         resultsView.delegate = self
          setUpHandlers()
     }
     
@@ -102,4 +105,15 @@ extension RMSearchView: RMSearchInputViewDelegate{
     func rmSearchInputViewDidTapKeyboardSearchButton(_ inputView: RMSearchInputView) {
         viewModel.executeSearch()
     }
+}
+extension RMSearchView: RMSearchResultViewDelegate{
+    func rmSearchResultView(_ resultsView: RMSearchResultView, didTapLocationAt index: Int) {
+        guard let locationModel = viewModel.locationSearchResult(at: index) else{
+            return
+        }
+       
+        delegate?.rmSearchView(self, didSelectLocation: locationModel)
+    }
+    
+    
 }
